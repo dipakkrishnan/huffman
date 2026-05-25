@@ -57,7 +57,7 @@ data/
 
 ## The self-decompressing payload
 
-The CMU assignment's trick is *brilliant*: produce a `.py` file that, when run, decompresses itself. The structure:
+A neat trick: produce a `.py` file that, when run, decompresses itself. The structure:
 
 ```python
 #!/usr/bin/env python3

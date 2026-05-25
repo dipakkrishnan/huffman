@@ -6,7 +6,7 @@ The output is a runnable Python script that contains:
     - A minimal Huffman decoder
     - A line that decodes the payload and writes it to stdout
 
-This is the CMU bonus trick. It's the same conceptual move as:
+It's the same conceptual move as:
     - tar self-extracting archives
     - quines (programs that print their own source)
     - bootloaders that contain the code to load themselves
