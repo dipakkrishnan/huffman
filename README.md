@@ -1,6 +1,6 @@
-# Huffman coding — the log intuition, made tangible
+# Huffman coding
 
-Implement Huffman coding from scratch. Every line of this exercise pays off your information-theory intuition.
+Implement Huffman coding from scratch — a hands-on way to build intuition for the information theory behind it.
 
 ## The connection to logs
 
