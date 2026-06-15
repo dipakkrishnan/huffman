@@ -13,6 +13,7 @@ Huffman assigns code lengths that approximate I(symbol).
 from __future__ import annotations
 from collections import Counter
 from typing import Dict
+import math
 
 
 def count_frequencies(data: bytes) -> Dict[int, int]:
@@ -31,7 +32,7 @@ def count_frequencies(data: bytes) -> Dict[int, int]:
         {}
     """
     # TODO: implement. One line with collections.Counter.
-    raise NotImplementedError
+    return dict(Counter(data))
 
 
 def empirical_probabilities(freqs: Dict[int, int]) -> Dict[int, float]:
@@ -39,8 +40,10 @@ def empirical_probabilities(freqs: Dict[int, int]) -> Dict[int, float]:
     total = sum(freqs.values())
     if total == 0:
         return {}
-    # TODO: implement. Dict comprehension.
-    raise NotImplementedError
+    probs = {}
+    for key in freqs:
+        probs[key] = freqs[key] / total
+    return probs
 
 
 def shannon_entropy(freqs: Dict[int, int]) -> float:
@@ -53,7 +56,9 @@ def shannon_entropy(freqs: Dict[int, int]) -> float:
         - Empty input: return 0.0
         - Single symbol (p=1): return 0.0 (no uncertainty -> no information)
     """
-    import math
-    # TODO: implement.
-    # Hint: use math.log2. Skip p=0 terms (0 * log(0) is defined as 0).
-    raise NotImplementedError
+    probs = empirical_probabilities(freqs)
+    entropy = 0
+    for key in probs:
+        v = probs[key]
+        entropy += v * math.log2(v)
+    return -1*entropy
